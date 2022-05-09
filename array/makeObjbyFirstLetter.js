@@ -5,18 +5,28 @@
 // For example, the array ['Alf', 'Alice', 'Ben'] should be transformed to
 // { a: ['Alf', 'Alice'], b: ['Ben']}
 
+// const myFunction = arr => {
+//   let newObj = {};
+//   arr.forEach(el => {
+//     const objName = el[0].toLowerCase();
+//     if (newObj[objName]) {
+//       newObj[objName].push(el);
+//     } else {
+//       newObj[objName] = [el];
+//     }
+//   });
+//   return newObj;
+// };
+
+// Refactor
 const myFunction = arr => {
-  let newObj = {};
-  arr.forEach(el => {
-    const objName = el[0].toLowerCase();
-    if (newObj[objName]) {
-      newObj[objName].push(el);
-    } else {
-      newObj[objName] = [el];
-    }
-  });
-  return newObj;
-};
+  return arr.reduce((acc, cur) => {
+    const firstLetter = cur.toLowerCase().charAt(0);
+    return { ...acc, [firstLetter]: [...(acc[firstLetter] || []), cur] };
+  }, {});
+}
+
+
 
 console.log(myFunction(['Alf', 'Alice', 'Ben'])); //{ a: ['Alf', 'Alice'], b: ['Ben']}
 console.log(myFunction(['Ant', 'Bear', 'Bird']));
