@@ -2,11 +2,15 @@
 // Return true if a has a property with key b
 // Return false otherwise
 
+// const myFunction = (a, b) => {
+//   for(let i in a) {
+//     if (i === b) return true;
+//   }
+//   return false;
+// };
+
 const myFunction = (a, b) => {
-  for(let i in a) {
-    if (i === b) return true;
-  }
-  return false;
+  return b in a;
 };
 
 console.log(myFunction({a:1,b:2,c:3},'b')); //true
