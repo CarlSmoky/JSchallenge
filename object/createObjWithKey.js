@@ -2,11 +2,18 @@
 // Create an object that has a property with key 'a' and a value of 'b'
 // Return the object
 
+// const myFunction = (a, b) => {
+//   const obj = new Object();
+//   obj[a] = b;
+//   return obj;
+// };
+
+// Refactor
 const myFunction = (a, b) => {
-  const obj = new Object();
-  obj[a] = b;
-  return obj;
+ return  { [a]: b };
 };
+
+
 
 console.log(myFunction('a','b')); //{a:'b'}
 console.log(myFunction('z','x'));
