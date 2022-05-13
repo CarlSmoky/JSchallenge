@@ -5,32 +5,41 @@
 // Attach the unit kg to the weight
 // Return a new object with all available properties that we are interested in
 
-const myFunction = obj => {
-  const listItem = {
-    fn : '',
-    ln : '',
-    size : 'cm',
-    weight : 'kg'
-  };
+// const myFunction = obj => {
+//   const listItem = {
+//     fn : '',
+//     ln : '',
+//     size : 'cm',
+//     weight : 'kg'
+//   };
 
-  const newObj = {};
-  Object.entries(obj).map(([k, v]) => {
-    Object.keys(listItem).forEach(el => {
-      if (k === el) {
-        if (el === 'size') {
-          const valueWithUnit = v + listItem.size; 
-          newObj[k] = valueWithUnit;
+//   const newObj = {};
+//   Object.entries(obj).map(([k, v]) => {
+//     Object.keys(listItem).forEach(el => {
+//       if (k === el) {
+//         if (el === 'size') {
+//           const valueWithUnit = v + listItem.size; 
+//           newObj[k] = valueWithUnit;
  
-        } else if (el === 'weight') {
-          const valueWithUnit = v + listItem.weight; 
-          newObj[k] = valueWithUnit;
-        } else(
-          newObj[k] = v
-        )
-      }
-    })
-  });
-  return newObj; 
+//         } else if (el === 'weight') {
+//           const valueWithUnit = v + listItem.weight; 
+//           newObj[k] = valueWithUnit;
+//         } else(
+//           newObj[k] = v
+//         )
+//       }
+//     })
+//   });
+//   return newObj; 
+// }
+
+const myFunction = obj => {
+  return {
+    ...(obj.fn && {fn: obj.fn}), //Check if fn exists
+    ln: obj.ln,
+    ...(obj.size && { size: `${obj.size}cm` }),
+    ...(obj.weight && { weight: `${obj.weight}kg` }),
+  };
 }
 
 console.log(myFunction({fn: 'Lisa', ln: 'Müller', age: 17, size: 175, weight: 67}));
@@ -40,5 +49,5 @@ console.log(myFunction({fn: 'Martin', ln: 'Harper', age: 26, email: 'martin.harp
 // {fn: 'Martin', ln: 'Harper', weight: '102kg'}
 console.log(myFunction({fn: 'Andrew', ln: 'Harper', age: 81, size: 175, weight: 71}));
 // {fn: 'Andrew', ln: 'Harper', size: '175cm', weight: '71kg'}
-console.log(myFunction({fn: 'Matthew', ln: 'Müller', age: 19, email: 'matthew@mueller.de'}));
+console.log(myFunction({ ln: 'Müller', age: 19, email: 'matthew@mueller.de'}));
 // {fn: 'Matthew', ln: 'Müller'}
