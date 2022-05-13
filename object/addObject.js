@@ -3,11 +3,17 @@
 // Return the new array of objects
 // Tipp: try not to mutate the original array
 
-const myFunction = (arr, str) => {
-  return arr.map(obj => {  
-     return {...obj, 'continent': str};
-  })
-};
+// const myFunction = (arr, str) => {
+//   return arr.map(obj => {  
+//      return {...obj, 'continent': str};
+//   })
+// };
 
-console.log(myFunction([{ city: 'Tokyo', country: 'Japan' }, { city: 'Bangkok', country: 'Thailand' }], 'Asia')); 
+//Refactor
+const myFunction = (arr, str) => {
+  return arr.map((obj) => ({ ...obj, continent: str }));
+}
+
+
+console.log(myFunction([{ city: 'Tokyo', country: 'Japan' }, { city: 'Bangkok', country: 'Thailand' }], 'Asia'));
 //[{ city: 'Tokyo', country: 'Japan', continent: 'Asia' }, { city: 'Bangkok', country: 'Thailand', continent: 'Asia' }]
