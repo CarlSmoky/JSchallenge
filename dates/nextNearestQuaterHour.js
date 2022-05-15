@@ -25,9 +25,9 @@
 //Refactor
 const myFunction = () => {
   const quarter = 15 * 60 * 1000;
-const closestQuarter = new Date(Math.round(date / quarter) * quarter);
-const nextQuarter = closestQuarter.getTime() < date.getTime() ? new Date(closestQuarter.getTime() + quarter) : closestQuarter;
-return nextQuarter.getMinutes();
+  const closestQuarter = new Date(Math.round(date / quarter) * quarter);
+  const nextQuarter = closestQuarter.getTime() < date.getTime() ? new Date(closestQuarter.getTime() + quarter) : closestQuarter;
+  return nextQuarter.getMinutes();
 }
 
 console.log(myFunction(new Date(2021, 8, 10, 15, 14, 00))); //15
