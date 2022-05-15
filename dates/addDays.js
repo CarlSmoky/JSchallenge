@@ -1,8 +1,14 @@
 // Write a function that takes as argument a date instance (a) and a number (b)
 // It should add b days to a and return the number of milliseconds since January 1, 1970, 00:00:00 UTC
 
+// const myFunction = (a, b) => {
+//   return a.getTime() + b * 1000 * 60 * 60 * 24;
+// };
+
+//Refactor
 const myFunction = (a, b) => {
-  return a.getTime() + b * 1000 * 60 * 60 * 24;
+  const currentDays = a.getDate();
+  return a.setDate(currentDays + b)
 };
 
 console.log(myFunction(new Date(Date.UTC(2000,01,01)), 31)); //952041600000
