@@ -7,7 +7,7 @@ const myFunction = (a, b) => {
   for (let e of b.keys()) {
     a.add(e);
   }
-  return Array.from(a);
+  return a;
 }
 
 console.log(myFunction(new Set('123'), new Set('234'))); //new Set('1234')
@@ -18,4 +18,5 @@ const arr = [1,2,3,4,5];
 const s = new Set();
 
 arr.forEach(e => s.add(e)); // === new Set([1,2,3,4,5])
+// new Set('123') === new Set(['1','2','3'])
 
