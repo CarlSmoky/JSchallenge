@@ -4,11 +4,21 @@
 
 const listItems = document.querySelectorAll("#list>li:not(#disabled)");
 
-console.log(listItems);
-const btn = document.querySelector('#button');
-btn.addEventListener('click', () => {
-  listItems.forEach((item) => {
-    const currentText = item.innerText
-    item.innerText = currentText === "OFF" ? "ON" : "OFF";
-    })
-});
+// const btn = document.querySelector('#button');
+// btn.addEventListener('click', () => {
+//   listItems.forEach((item) => {
+//     const currentText = item.innerText
+//     item.innerText = currentText === "OFF" ? "ON" : "OFF";
+//     })
+// });
+
+//Refactor
+const handleClick = () => {
+  listItems.forEach(item => {
+  const oldText = item.innerText;
+    return item.innerText = oldText === 'ON' ? 'OFF' : 'ON';
+  })
+};
+if(listItems.length > 1) {
+  button.addEventListener('click', handleClick);
+}
