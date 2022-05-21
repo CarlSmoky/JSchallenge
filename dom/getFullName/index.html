@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display Full Name</title>
+
+  <!-- styles -->
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    input, button {
+      margin: 0 auto;
+      text-align: center;
+      display: inline-block;
+      width: 100px;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+
+<body>
+  <div class="container">
+    <input id="firstName" placeholder="Max" value="Max" />
+    <input id="lastName" placeholder="Musterman" value="Musterman" />
+    <input id="fullName" placeholder="full name" readonly />
+    <button type="button" id="button">Verify Code</button>
+  </div>
+
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
