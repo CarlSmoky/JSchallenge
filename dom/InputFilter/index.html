@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video</title>
+
+  <!-- styles -->
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      /* // This defines what 1 rem is */
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 200px;
+    }
+
+    #input {
+      border: 1px solid grey;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    #list {
+      width: 100%;
+    }
+
+    #list li {
+      list-style-type: none;
+      background-color: #4180dd;
+      color: white;
+      padding: .5rem;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+
+<body>
+  <div class="container">
+    <input id="input" placeholder="Filter..." />
+    <ul id="list">
+      <li>paris</li>
+      <li>berlin</li>
+      <li>new york</li>
+      <li>sao paulo</li>
+      <li>hong kong</li>
+      <li>vienna</li>
+    </ul>
+  </div>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
