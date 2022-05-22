@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ButtonElement</title>
+
+  <!-- styles -->
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      /* // This defines what 1 rem is */
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      
+    }
+
+    #filter_users {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 5px 1px;
+    }
+
+    #users-list {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    #users-list li {
+      list-style: none;
+      padding: 10px;
+      border: 1px solid #e4e4e4;
+    }
+
+    #users-list li:first-child {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+
+    #users-list li:last-child {
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+
+<body>
+  <div class="container">
+    <input type="text" placeholder="Search Users" id="filter_users" />
+
+    <ul id="users-list">
+
+    </ul>
+  </div>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
