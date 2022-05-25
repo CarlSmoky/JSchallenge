@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pop the balloons</title>
+
+  <!-- styles -->
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      /* // This defines what 1 rem is */
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 10rem;
+      display: flex;
+      transition: all .4s;
+    }
+
+    li::before {
+      content: "•";
+      color: red;
+    }
+
+    li:hover:before {
+      /* color: yellow; */
+    }
+
+  </style>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+
+<body>
+  <div class="container">
+    <ul id="list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
