@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Stop Button</title>
+
+  <!-- styles -->
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      /* // This defines what 1 rem is */
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 404px;
+      height:150px;
+      margin: 0 auto;
+      position: relative;
+      border: .2rem solid pink;
+      padding: 2rem;
+    }
+
+    #button {
+      position: absolute;
+      width: 100px;
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+
+<body>
+  <div class="container">
+    <button type="button" id="button">Click Me</button>
+  </div>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
