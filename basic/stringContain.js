@@ -3,13 +3,18 @@
 // If not, append it to the end
 // Return the concatenation
 
+// const myFunction = (a, b) => {
+//   if (a.includes(b)) {
+//     return b + a;
+//   } else {
+//     return a + b;
+//   }
+// };
+
+//Refactor
 const myFunction = (a, b) => {
-  if (a.includes(b)) {
-    return b + a;
-  } else {
-    return a + b;
-  }
-};
+  return a.indexOf(b) === -1 ? a + b : b + a
+}
 
 console.log(myFunction('cheese', 'cake')); //'cheesecake'
 console.log(myFunction('lips', 's')); //'slips'
