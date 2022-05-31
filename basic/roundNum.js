@@ -3,7 +3,8 @@
 // Return the rounded number
 
 const myFunction = (a) => {
-  return Math.round(a * 100) / 100;
+  // return Math.round(a * 100) / 100;
+  return Number(a.toFixed(2));
 }
 
 console.log(myFunction(2.12397)); //2.12
