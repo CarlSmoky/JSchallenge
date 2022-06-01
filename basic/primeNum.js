@@ -5,6 +5,7 @@
 
 const myFunction = (a) => {
   const halfNum = Math.floor(a / 2) ;
+  //helper
   const isPrime = (a) => {
     let mod = 0;
     for (let i = 2; i < halfNum; i++) {
@@ -14,7 +15,7 @@ const myFunction = (a) => {
     }
     return mod === 0;
   }
-
+  //helper
   const getPrime = (a) => {
     let nextHighestPrime = a;
     while (!isPrime(nextHighestPrime)) {
@@ -22,12 +23,8 @@ const myFunction = (a) => {
     }
     return nextHighestPrime;
   }
-
-  if (isPrime(a)) {
-    return a;
-  } else {
-    return getPrime(a);
-  }
+  
+  return isPrime(a) ? a : getPrime(a);
 }
 
 console.log(myFunction(38)); //41
