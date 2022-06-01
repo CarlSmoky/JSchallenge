@@ -3,29 +3,42 @@
 // If a is prime, return a
 // If not, return the next higher prime number
 
+// const myFunction = (a) => {
+//   const halfNum = Math.floor(a / 2) ;
+//   //helper
+//   const isPrime = (a) => {
+//     let mod = 0;
+//     for (let i = 2; i < halfNum; i++) {
+//       if (a % i === 0) {
+//         mod += 1;
+//       }
+//     }
+//     return mod === 0;
+//   }
+//   //helper
+//   const getPrime = (a) => {
+//     let nextHighestPrime = a;
+//     while (!isPrime(nextHighestPrime)) {
+//       nextHighestPrime ++;
+//     }
+//     return nextHighestPrime;
+//   }
+
+//   return isPrime(a) ? a : getPrime(a);
+// }
+
+// Refactor
 const myFunction = (a) => {
-  const halfNum = Math.floor(a / 2) ;
-  //helper
-  const isPrime = (a) => {
-    let mod = 0;
-    for (let i = 2; i < halfNum; i++) {
-      if (a % i === 0) {
-        mod += 1;
-      }
+  const isPrime = (num) => {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
     }
-    return mod === 0;
+    return num > 1;
   }
-  //helper
-  const getPrime = (a) => {
-    let nextHighestPrime = a;
-    while (!isPrime(nextHighestPrime)) {
-      nextHighestPrime ++;
-    }
-    return nextHighestPrime;
-  }
-  
-  return isPrime(a) ? a : getPrime(a);
-}
+  let n = a;
+  while (!isPrime(n)) n++;
+  return n;
+};
 
 console.log(myFunction(38)); //41
 console.log(myFunction(7)); //7
