@@ -3,17 +3,22 @@
 // If yes, return x
 // If not, return the next higher natural number that is divisible by y
 
+// const myFunction = (x, y) => {
+//   const isDivisible = (num1, num2) => {
+//     return num1 % num2 === 0;
+//   }
+//   const getDivisbleBy = (num1, num2) => {
+//     let result = num1;
+//     while(!isDivisible(result, num2)) result++;
+//     return result;
+//   }
+//   return isDivisible(x, y) ? x : getDivisbleBy(x, y);
+// }
+
+//Refatcor
 const myFunction = (x, y) => {
-  const isDivisible = (num1, num2) => {
-    return num1 % num2 === 0;
-  }
-  const getDivisbleBy = (num1, num2) => {
-    let result = num1;
-    while(!isDivisible(result, num2)) result++;
-    return result;
-  }
-  return isDivisible(x, y) ? x : getDivisbleBy(x, y);
-  
+  while(x % y !== 0) x++;
+  return x;
 }
 
 console.log(myFunction(1, 23)); //23
