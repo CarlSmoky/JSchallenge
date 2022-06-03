@@ -3,11 +3,19 @@
 // Replace empty strings and strings that contain only whitespace with null values
 // Return the resulting object
 
+// const myFunction = (obj) => {
+//   let newObj = new Object;
+//    Object.entries(obj).forEach(([key, value]) => {
+//     newObj[key] = (value.trim() === '') ? null : value;
+//   })
+//   return newObj;
+// }
+
 const myFunction = (obj) => {
-  let newObj = new Object;
-   Object.entries(obj).forEach(([key, value]) => {
-    newObj[key] = (value.trim() === '') ? null : value;
-  })
+  const newObj = { ...obj };
+  for (key in newObj) {
+    if (newObj[key].trim() === '') newObj[key] = null;
+  }
   return newObj;
 }
 
