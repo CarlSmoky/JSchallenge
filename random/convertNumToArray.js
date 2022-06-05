@@ -13,8 +13,8 @@
 //Refactor
 const myFunction = (a) => {
   const string = a + '';
-  const strings = string.split('');
-  return strings.map(digit => Number(digit))
+  // const strings = string.split('');
+  return string.split('').map(digit => Number(digit))
 }
 
 console.log(myFunction(10)); //[1,0]
