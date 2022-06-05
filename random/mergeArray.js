@@ -19,7 +19,7 @@
 
 //Refactor
 const myFunction = (a, b) => {
-  return [...new. Set([...a, ...b])].sort((x, y) => x - y);
+  return [...new Set([...a, ...b])].sort((x, y) => x - y);
 }
 
 console.log(myFunction([1, 2, 3], [3, 4, 5])); //[ 1, 2, 3, 4, 5 ]
