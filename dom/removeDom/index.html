@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remove Dom</title>
+
+  <!-- styles -->
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      /* // This defines what 1 rem is */
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+
+    .outline {
+      width: 12rem;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .container {
+      width: 40rem;
+      height: 12rem;
+      position: relative;
+      flex-direction: row;
+    }
+
+    #green {
+      height: 10rem;
+      width: 10rem;
+      background-color: green;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #red {
+      height: 10rem;
+      width: 10rem;
+      background-color: red;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    #button {
+      display: block;
+      height: 2rem;
+      width: 9rem;
+      margin: 0 auto;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+
+<body>
+  <div class="outline">
+    <div class="container">
+      <div id="green"></div>
+      <div id="red"></div>
+    </div>
+    <button type="button" id="button">Click Me</button>
+  </div>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
