@@ -2,15 +2,26 @@
 // It should return an object with all original object properties
 // except for the property with key 'b'
 
+// const myFunction = obj => {
+//   const newObj = new Object;
+//   Object.entries(obj)
+//     .forEach(([key, value]) => {
+//       if (key !== 'b') {
+//         newObj[key] = value;
+//       }
+//     })
+
+//   return newObj;
+// }
+
+//Refactor1
 const myFunction = obj => {
   const newObj = new Object;
-  Object.entries(obj)
-    .forEach(([key, value]) => {
-      if (key !== 'b') {
-        newObj[key] = value;
-      }
-    })
-
+  const arr = Object.entries(obj)
+    .filter(([key, value]) => key !== 'b')
+  arr.forEach(el => {
+    newObj[el[0]] = el[1];
+  })
   return newObj;
 }
 
