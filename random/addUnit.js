@@ -5,23 +5,31 @@
 // Attach the unit kg to the weight
 // Return a new object with all available properties that we are interested in
 
-const myFunction = obj => {
-  const newObj = new Object;
-  Object.entries(obj).forEach(([key, value]) => {
-    if (key === "size") {
-      newObj[key] = value + "cm";
-    } else if (key === "weight") {
-      newObj[key] = value + "kg";
-    } else if (key === "fn") {
-      newObj[key] = value;
-    } else if (key === "ln") {
-      newObj[key] = value;
-    }
-  })
-  return newObj;
+// const myFunction = obj => {
+//   const newObj = new Object;
+//   Object.entries(obj).forEach(([key, value]) => {
+//     if (key === "size") {
+//       newObj[key] = value + "cm";
+//     } else if (key === "weight") {
+//       newObj[key] = value + "kg";
+//     } else if (key === "fn") {
+//       newObj[key] = value;
+//     } else if (key === "ln") {
+//       newObj[key] = value;
+//     }
+//   })
+//   return newObj;
+// }
+
+//Refactor
+const myFunction = (obj) => {
+  return {
+    fn: obj.fn,
+    ln: obj.ln,
+    ...(obj.size && { size: `${obj.size}cm` }),
+    ...(obj.weight && { weight: `${obj.weight}kg` }),
+  };
 }
-
-
 
 console.log(myFunction({ fn: 'Lisa', ln: 'Müller', age: 17, size: 175, weight: 67 })) //{fn: 'Lisa', ln: 'Müller', size: '175cm', weight: '67kg'}
 console.log(myFunction({ fn: 'Martin', ln: 'Harper', age: 26, email: 'martin.harper@test.de', weight: 102 })); //{fn: 'Martin', ln: 'Harper', weight: '102kg'}
