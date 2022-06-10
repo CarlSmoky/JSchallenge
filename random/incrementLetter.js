@@ -3,13 +3,19 @@
 // Increment each letter to the next letter in the alphabet
 // Return the correct word
 
+// const myFunction = (str) => {
+//   let newStr = '';
+//   for (let i in str ) {
+//     newStr += String.fromCharCode(str.charCodeAt(i) + 1);
+//   }
+//   return newStr;
+// }
+
+//Refactor
 const myFunction = (str) => {
-  let newStr = '';
-  for (let i in str ) {
-    newStr += String.fromCharCode(str.charCodeAt(i) + 1);
-  }
-  return newStr;
-  
+  const arr = [...str];
+  const correctedArray = arr.map(e => String.fromCharCode(e.charCodeAt()+1));
+  return correctedArray.join('');
 }
 
 console.log(myFunction('bnchmf')); //'coding'
