@@ -24,14 +24,14 @@
 //Refactor
 const myFunction = (obj) => {
   return {
-    fn: obj.fn,
+    ...(obj.fn && {fn: obj.fn}), //Check if fn exists
     ln: obj.ln,
     ...(obj.size && { size: `${obj.size}cm` }),
     ...(obj.weight && { weight: `${obj.weight}kg` }),
   };
 }
 
-console.log(myFunction({ fn: 'Lisa', ln: 'Müller', age: 17, size: 175, weight: 67 })) //{fn: 'Lisa', ln: 'Müller', size: '175cm', weight: '67kg'}
+console.log(myFunction({ ln: 'Müller', age: 17, size: 175, weight: 67 })) //{fn: 'Lisa', ln: 'Müller', size: '175cm', weight: '67kg'}
 console.log(myFunction({ fn: 'Martin', ln: 'Harper', age: 26, email: 'martin.harper@test.de', weight: 102 })); //{fn: 'Martin', ln: 'Harper', weight: '102kg'}
 console.log(myFunction({ fn: 'Andrew', ln: 'Harper', age: 81, size: 175, weight: 71 })); //{fn: 'Andrew', ln: 'Harper', size: '175cm', weight: '71kg'}
 console.log(myFunction({ fn: 'Matthew', ln: 'Müller', age: 19, email: 'matthew@mueller.de' })); //{fn: 'Matthew', ln: 'Müller'}
