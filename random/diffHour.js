@@ -2,10 +2,15 @@
 // It should return true if the difference between the dates is less than or equal to 1 hour
 // It should return false otherwise
 
+// const myFunction = (a, b) => {
+//   const diff = Math.abs(a.getTime() - b.getTime());
+//   const diffHour = diff / (1000 * 60 * 60);
+//   return diffHour <= 1 ? true : false;
+// }
+
+//Refatcor
 const myFunction = (a, b) => {
-  const diff = Math.abs(a.getTime() - b.getTime());
-  const diffHour = diff / (1000 * 60 * 60);
-  return diffHour <= 1 ? true : false;
+  return Math.abs(a - b) / 1000 / 60 <= 60;
 }
 
 console.log(myFunction(new Date('2000/01/01 08:00:00'), new Date('2000/01/01 08:45:00')) ); //true
