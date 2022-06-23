@@ -2,12 +2,19 @@
 // Create an object that has properties with keys 'a' and corresponding values 'b'
 // Return the object
 
+// const myFunction = (a, b) => {
+//   const newObj = {};
+//   a.forEach((e, i) => {
+//     newObj[e] = b[i]
+//   });
+//   return newObj;
+// };
+
+//Refactor
 const myFunction = (a, b) => {
-  const newObj = {};
-  a.forEach((e, i) => {
-    newObj[e] = b[i]
-  });
-  return newObj;
-};
+  return a.reduce((acc, cur, i) => {
+    return {...acc, [cur] : b[i]}
+  }, {})
+}
 
 console.log(myFunction(['a','b','c'],[1,2,3])); //{a:1,b:2,c:3}
